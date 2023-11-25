@@ -10,3 +10,21 @@
 .almarai {
     font-family: Almarai;
 }
+
+::-webkit-scrollbar-thumb{
+ 
+    cursor: grab;
+    background-color: #bdbdbd !important;
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar{
+    background-color: #fff;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.h-8v{
+    height: 60vh;
+}
