@@ -72,7 +72,7 @@ export default function Header() {
         <div className="flex items-center mt-12 w-11/12 text-[#000] h-8v bg-gray-200 overflow-hidden overflow-x-auto py-3  rounded-[70px]">
           <div className="w-2/5  h-full flex flex-col items-start pl-7 gap-5 justify-center">
             <p>Sotivda 6-oktabrdan</p>
-            <h1 className='font-bold text-5xl tracking-widest leading-snug'>18.000.000 dan boshlanadi 15GB 3 oy + iSpace</h1>
+            <h1 className='font-extrabold text-5xl tracking-widest leading-snug'>18.000.000 dan boshlanadi 15GB 3 oy + iSpace</h1>
             <button className='rounded-[30px]
 border border-black px-8 py-2'>Sotib Olish</button>
           </div>
@@ -83,10 +83,10 @@ border border-black px-8 py-2'>Sotib Olish</button>
         {/* end ad section */}
       </div>
       {/* modal section */}
-      <div className="absolute right-0 p-5 h-4/5 rounded-3xl shadow-lg text-black flex flex-col justify-between items-center">
+      <div className="absolute right-0 p-5 h-4/5 rounded-3xl shadow-lg  text-black flex flex-col justify-between items-center">
         {detals.map((el, i) => (
           <div key={i} className="flex items-center justify-center  w-full">
-            <Link to={el.link} className={toogle ? 'flex w-full items-center  justify-start gap-2 ' : 'flex w-full items-center gap-2 justify-center ' }>
+            <Link to={el.link} className={toogle ? 'flex w-full items-center  justify-start gap-4 ' : ' flex w-full items-center gap-2 justify-center ' }>
               {el.icon} {toogle ? el.name : ""}
             </Link>
           </div>

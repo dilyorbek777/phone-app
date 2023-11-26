@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link className="text-[40px]" to={'/'} >
           LOGO
         </Link>
-        <button className="px-6 py-[14px] rounded-[20px] bg-teal-300 flex items-center justify-center gap-4 " onClick={() => SetClick(!click)}>
+        <button className="px-6 py-[14px] rounded-[20px] bg-[#FFFFFF] text-black flex items-center justify-center gap-4 " onClick={() => SetClick(!click)}>
           {click ? <>
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
