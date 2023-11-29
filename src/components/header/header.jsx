@@ -13,6 +13,7 @@ const cte = [
   { name: 'Poco', href: '/' },
   { name: 'infinix', href: '/' },
 ]
+// hhjvhjvh
 
 const detals = [
   {

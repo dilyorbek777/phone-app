@@ -3,27 +3,37 @@ import { ApiService } from '../../service/api.service'
 import { Link } from 'react-router-dom'
 
 const Main = () => {
+  let list = [];
+
   const [info, SetInfo] = useState([])
-  const [liked, SetLiked] = useState(['0,,,,,'])
-  const [like, SetLike] = useState([])
+  const [like, SetLike] = useState(false)
+  const Like = (e) => {
+    list.push(e.target.id)
+    console.log(list.join(","));
+    const liked = localStorage.getItem("like").split(",");
+
+    const ready = list
+    ready.forEach(el => {
+      liked.forEach(le=>{
+        if (el===le) {
+          localStorage.setItem("like", liked.push(el).join(","))
+        }
+      })
+    });
+    console.log(liked);
+   
+    localStorage.setItem("like", ",");
+    localStorage.setItem("like", `${e.target.id},`);
+  }
   useEffect(() => {
     ApiService.fetching().then(data => SetInfo(data))
     ApiService.fetching().then(data => console.log(data))
   }, [])
-  useEffect(() => {
 
-    localStorage.setItem("name", like);
-    SetLiked(localStorage.getItem("name"))
-  }, [like]);
-
-  // const likedinfo = liked.split(",") 
-  console.log(liked.split(","));
-  const splitted = liked.split(",")
-  console.log(splitted);
   return (
     <main className='max-w-[1728px] almarai  px-28 mx-auto   py-6 flex items-start gap-10 flex-col justify-between'>
       <h1 className='text-[#474747] text-3xl font-bold'>Trending Items  </h1>
-     
+
       <div className="grid grid-cols-3 items-center justify-between gap-24">
         {info.map((card, i) => (
           <div className="flex items-center justify-between shadow-lg px-3 py-6 h-[30vh] rounded-[30px] hover:shadow-2xl" key={i}>
@@ -39,11 +49,9 @@ const Main = () => {
               <div className="flex gap-2">
                 {card.rating.count > 10 ? <p className='bg-[#00A71180] w-1/2 rounded-3xl text-center text-white font-normal'>aviable </p> : <p>`Only ${card.rating.count} left` </p>} <article className='text-[#00A71180]'>{card.rating.rate}% off</article>
               </div>
-              <p className='font-bold text-[#474747]'>₹{card.price} <button id={card.id} onClick={() => SetLike(like.concat(card.id))}>
-                {splitted.map((like)=>(
-                  like === card.id ? "liked":"like"
-                ))}
-                </button></p>
+              <p className='font-bold text-[#474747]'>₹{card.price}
+                <button id={card.id} onClick={(e) => Like(e)}>dd</button>
+              </p>
 
 
             </div>

@@ -12,7 +12,6 @@
 }
 
 ::-webkit-scrollbar-thumb{
- 
     cursor: grab;
     background-color: #bdbdbd !important;
     border-radius: 20px;
