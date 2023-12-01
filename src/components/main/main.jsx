@@ -6,7 +6,7 @@ const Main = () => {
   let list = [];
 
   const [info, SetInfo] = useState([])
-  const [like, SetLike] = useState(false)
+  // const [like, SetLike] = useState(false)
   const Like = (e) => {
     list.push(e.target.id)
     console.log(list.join(","));
@@ -26,7 +26,7 @@ const Main = () => {
     localStorage.setItem("like", `${e.target.id},`);
   }
   useEffect(() => {
-    ApiService.fetching().then(data => SetInfo(data))
+    // ApiService.fetching().then(data => SetInfo(data))
     ApiService.fetching().then(data => console.log(data))
   }, [])
 

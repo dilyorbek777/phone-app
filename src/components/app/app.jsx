@@ -1,10 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
-import { Home, Navbar } from '../'
+import { FormSearch, Home, Navbar, ToogleBar } from '../'
 
 const App = () => {
   return (
     <>
       <Navbar />
+      <FormSearch />
+      <ToogleBar />
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>
